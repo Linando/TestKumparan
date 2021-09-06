@@ -12,7 +12,7 @@ import UIKit
 //}
 
 class PhotoTableViewCell: UITableViewCell {
-
+    
     
     @IBOutlet weak var leftPhoto: UIImageView!
     @IBOutlet weak var middlePhoto: UIImageView!
@@ -26,7 +26,7 @@ class PhotoTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-
+    
 }

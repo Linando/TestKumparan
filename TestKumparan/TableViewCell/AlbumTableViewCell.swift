@@ -10,7 +10,7 @@ import Alamofire
 import AlamofireImage
 
 class AlbumTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var albumNameLabel: UILabel!
     @IBOutlet weak var photoTableView: UITableView!
     
@@ -26,26 +26,26 @@ class AlbumTableViewCell: UITableViewCell {
         photoTableView.delegate = self
         photoTableView.dataSource = self
     }
-
+    
     func getPhotoData(){
         AF.request("https://jsonplaceholder.typicode.com/albums/\(albumID!)/photos").responseData { [weak self] response in
             switch response.result {
-                case .failure(let error):
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                do {
+                    self!.photoData = try JSONDecoder().decode([PhotoModel].self, from: data)
+                    self!.photoTableView.reloadData()
+                } catch let error {
                     print(error)
-                case .success(let data):
-                    do {
-                        self!.photoData = try JSONDecoder().decode([PhotoModel].self, from: data)
-                        self!.photoTableView.reloadData()
-                    } catch let error {
-                        print(error)
-                    }
                 }
+            }
         }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
     @objc func leftPhotoTapped(tapGestureRecognizer: UITapGestureRecognizer)

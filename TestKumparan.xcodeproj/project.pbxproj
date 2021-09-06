@@ -11,6 +11,7 @@
 		D275A07926E5E903000525F4 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275A07826E5E903000525F4 /* AlbumModel.swift */; };
 		D275A07B26E5EB3C000525F4 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275A07A26E5EB3C000525F4 /* PhotoModel.swift */; };
 		D275A0A126E615BC000525F4 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275A0A026E615BC000525F4 /* PhotoDetailViewController.swift */; };
+		D275A10926E628B0000525F4 /* TestKumparanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D275A10826E628B0000525F4 /* TestKumparanTests.swift */; };
 		D2CE3A0626E3BE22004385F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE3A0526E3BE22004385F3 /* AppDelegate.swift */; };
 		D2CE3A0826E3BE22004385F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE3A0726E3BE22004385F3 /* SceneDelegate.swift */; };
 		D2CE3A0A26E3BE22004385F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE3A0926E3BE22004385F3 /* HomeViewController.swift */; };
@@ -28,6 +29,16 @@
 		D2CE3A2D26E5E153004385F3 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE3A2C26E5E153004385F3 /* PhotoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D275A10B26E628B0000525F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2CE39FA26E3BE22004385F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2CE3A0126E3BE22004385F3;
+			remoteInfo = TestKumparan;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0BC6638EBE7A64DE1BF4B8C3 /* Pods_TestKumparan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestKumparan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5716BAB90ECD4AFA01322613 /* Pods-TestKumparan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKumparan.release.xcconfig"; path = "Target Support Files/Pods-TestKumparan/Pods-TestKumparan.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,6 +46,9 @@
 		D275A07826E5E903000525F4 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		D275A07A26E5EB3C000525F4 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		D275A0A026E615BC000525F4 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		D275A10626E628B0000525F4 /* TestKumparanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestKumparanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D275A10826E628B0000525F4 /* TestKumparanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKumparanTests.swift; sourceTree = "<group>"; };
+		D275A10A26E628B0000525F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2CE3A0226E3BE22004385F3 /* TestKumparan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestKumparan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CE3A0526E3BE22004385F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2CE3A0726E3BE22004385F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +69,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D275A10326E628B0000525F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2CE39FF26E3BE22004385F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,10 +104,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D275A10726E628B0000525F4 /* TestKumparanTests */ = {
+			isa = PBXGroup;
+			children = (
+				D275A10826E628B0000525F4 /* TestKumparanTests.swift */,
+				D275A10A26E628B0000525F4 /* Info.plist */,
+			);
+			path = TestKumparanTests;
+			sourceTree = "<group>";
+		};
 		D2CE39F926E3BE22004385F3 = {
 			isa = PBXGroup;
 			children = (
 				D2CE3A0426E3BE22004385F3 /* TestKumparan */,
+				D275A10726E628B0000525F4 /* TestKumparanTests */,
 				D2CE3A0326E3BE22004385F3 /* Products */,
 				55AFFFCA9E6302D8DE9F8E61 /* Pods */,
 				C682567F259CFC08C4CD3D65 /* Frameworks */,
@@ -97,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				D2CE3A0226E3BE22004385F3 /* TestKumparan.app */,
+				D275A10626E628B0000525F4 /* TestKumparanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +186,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D275A10526E628B0000525F4 /* TestKumparanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D275A10D26E628B0000525F4 /* Build configuration list for PBXNativeTarget "TestKumparanTests" */;
+			buildPhases = (
+				D275A10226E628B0000525F4 /* Sources */,
+				D275A10326E628B0000525F4 /* Frameworks */,
+				D275A10426E628B0000525F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D275A10C26E628B0000525F4 /* PBXTargetDependency */,
+			);
+			name = TestKumparanTests;
+			productName = TestKumparanTests;
+			productReference = D275A10626E628B0000525F4 /* TestKumparanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D2CE3A0126E3BE22004385F3 /* TestKumparan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2CE3A1626E3BE23004385F3 /* Build configuration list for PBXNativeTarget "TestKumparan" */;
@@ -182,6 +232,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					D275A10526E628B0000525F4 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = D2CE3A0126E3BE22004385F3;
+					};
 					D2CE3A0126E3BE22004385F3 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -201,11 +255,19 @@
 			projectRoot = "";
 			targets = (
 				D2CE3A0126E3BE22004385F3 /* TestKumparan */,
+				D275A10526E628B0000525F4 /* TestKumparanTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D275A10426E628B0000525F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2CE3A0026E3BE22004385F3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +323,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D275A10226E628B0000525F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D275A10926E628B0000525F4 /* TestKumparanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2CE39FE26E3BE22004385F3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +355,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D275A10C26E628B0000525F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2CE3A0126E3BE22004385F3 /* TestKumparan */;
+			targetProxy = D275A10B26E628B0000525F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D2CE3A0B26E3BE22004385F3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -305,6 +383,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D275A10E26E628B0000525F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5538968945;
+				INFOPLIST_FILE = TestKumparanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Linando-Saputra.TestKumparanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestKumparan.app/TestKumparan";
+			};
+			name = Debug;
+		};
+		D275A10F26E628B0000525F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5538968945;
+				INFOPLIST_FILE = TestKumparanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Linando-Saputra.TestKumparanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestKumparan.app/TestKumparan";
+			};
+			name = Release;
+		};
 		D2CE3A1426E3BE23004385F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -464,6 +582,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D275A10D26E628B0000525F4 /* Build configuration list for PBXNativeTarget "TestKumparanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D275A10E26E628B0000525F4 /* Debug */,
+				D275A10F26E628B0000525F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D2CE39FD26E3BE22004385F3 /* Build configuration list for PBXProject "TestKumparan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

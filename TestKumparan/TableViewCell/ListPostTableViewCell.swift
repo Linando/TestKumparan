@@ -8,7 +8,7 @@
 import UIKit
 
 class ListPostTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -18,11 +18,11 @@ class ListPostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

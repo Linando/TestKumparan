@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var homeTableView: UITableView!
     var postData: [PostModel]?
     var selectedUserName: String?
@@ -23,22 +23,25 @@ class HomeViewController: UIViewController {
         
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        getPostData()
+    }
+    
+    func getPostData(){
         AF.request("https://jsonplaceholder.typicode.com/posts").responseData { [weak self] response in
             switch response.result {
-                case .failure(let error):
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                do {
+                    self!.postData = try JSONDecoder().decode([PostModel].self, from: data)
+                    self!.homeTableView.reloadData()
+                } catch let error {
                     print(error)
-                case .success(let data):
-                    do {
-                        self!.postData = try JSONDecoder().decode([PostModel].self, from: data)
-                        self!.homeTableView.reloadData()
-                    } catch let error {
-                        print(error)
-                    }
                 }
+            }
         }
     }
-
-
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
@@ -57,16 +60,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             cell.bodyLabel.text = postData![indexPath.row].body
             AF.request("https://jsonplaceholder.typicode.com/users/\(postData![indexPath.row].userID)").responseData { response in
                 switch response.result {
-                    case .failure(let error):
+                case .failure(let error):
+                    print(error)
+                case .success(let data):
+                    do {
+                        let userData = try JSONDecoder().decode(UserModel.self, from: data)
+                        cell.userNameLabel.text = "\(userData.name), \(userData.company.name)"
+                    } catch let error {
                         print(error)
-                    case .success(let data):
-                        do {
-                            let userData = try JSONDecoder().decode(UserModel.self, from: data)
-                            cell.userNameLabel.text = "\(userData.name), \(userData.company.name)"
-                        } catch let error {
-                            print(error)
-                        }
                     }
+                }
             }
             return cell
         }

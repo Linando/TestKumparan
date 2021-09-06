@@ -8,12 +8,8 @@
 import UIKit
 import Alamofire
 
-
-
 class UserDetailViewController: UIViewController {
     
-    
-
     @IBOutlet weak var userCompanyLabel: UILabel!
     @IBOutlet weak var userAddressLabel: UILabel!
     @IBOutlet weak var userEmailLabel: UILabel!
@@ -26,43 +22,48 @@ class UserDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         albumTableView.delegate = self
         albumTableView.dataSource = self
-        
         NotificationCenter.default.addObserver(self, selector: #selector(segueToPhotoDetailVC), name: NSNotification.Name(rawValue: "segueToPhotoDetailVC"), object: nil)
         
+        getUserData()
+        getAlbumData()
+    }
+    
+    func getUserData(){
         AF.request("https://jsonplaceholder.typicode.com/users/\(userID!)").responseData { [weak self] response in
             switch response.result {
-                case .failure(let error):
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                do {
+                    let userData = try JSONDecoder().decode(UserModel.self, from: data)
+                    self!.userNameLabel.text = userData.name
+                    self!.userAddressLabel.text = "\(userData.address.street), \(userData.address.suite), \(userData.address.city)"
+                    self!.userEmailLabel.text = userData.email
+                    self!.userCompanyLabel.text = userData.company.name
+                } catch let error {
                     print(error)
-                case .success(let data):
-                    do {
-                        let userData = try JSONDecoder().decode(UserModel.self, from: data)
-                        self!.userNameLabel.text = userData.name
-                        self!.userAddressLabel.text = "\(userData.address.street), \(userData.address.suite), \(userData.address.city)"
-                        self!.userEmailLabel.text = userData.email
-                        self!.userCompanyLabel.text = userData.company.name
-                    } catch let error {
-                        print(error)
-                    }
                 }
+            }
         }
-        
+    }
+    
+    func getAlbumData(){
         AF.request("https://jsonplaceholder.typicode.com/users/\(userID!)/albums").responseData { [weak self] response in
             switch response.result {
-                case .failure(let error):
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                do {
+                    self!.albumData = try JSONDecoder().decode([AlbumModel].self, from: data)
+                    self!.albumTableView.reloadData()
+                } catch let error {
                     print(error)
-                case .success(let data):
-                    do {
-                        self!.albumData = try JSONDecoder().decode([AlbumModel].self, from: data)
-                        self!.albumTableView.reloadData()
-                    } catch let error {
-                        print(error)
-                    }
                 }
+            }
         }
-        
     }
     
     @objc func segueToPhotoDetailVC(_ notification: NSNotification){
@@ -97,10 +98,7 @@ extension UserDetailViewController: UITableViewDataSource, UITableViewDelegate{
             cell.getPhotoData()
             return cell
         }
-        
-        
         return UITableViewCell()
     }
-    
     
 }
